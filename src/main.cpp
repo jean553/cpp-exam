@@ -7,7 +7,9 @@
 
 int main()
 {
-    std::ifstream file("../data.json");
+    constexpr char FILE_PATH[] {"data.json"};
+
+    std::ifstream file(FILE_PATH);
 
     if (!file.is_open())
     {
