@@ -69,7 +69,7 @@ int main()
         removeDoubleQuotes(strC);
         removeDoubleQuotes(strD);
 
-        std::cout << strQuestion << std::endl << std::endl;
+        std::cout << std::endl << std::endl << strQuestion << std::endl;
         std::cout << SEPARATOR << std::endl;
         std::cout << strCode << std::endl;
         std::cout << SEPARATOR << std::endl << std::endl;
