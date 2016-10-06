@@ -6,7 +6,7 @@ project(cpp-exam)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 set(EXECUTABLE cpp-exam)
 
-add_compile_options(-std=c++14 -Wall -Werror)
+add_compile_options(-std=c++14)
 
 file(
     GLOB
