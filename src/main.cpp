@@ -23,29 +23,72 @@ void removeDoubleQuotes(std::string& str)
     str.erase(std::remove(str.begin(), str.end(), '\"'), str.end());
 }
 
-int main()
+/**
+ * @brief read a list of files and record their content inside a given
+ * referenced string
+ *
+ * @param files list of files
+ * @param json non constant reference of string to update
+ *
+ * @throw std::invalid_argument a file couldn't be opened
+ *
+ * we use a function template walk-around as the array size might change; this
+ * method is the well-known way to deduce an std::array size using templates
+ */
+template<std::size_t S>
+void loadAllFiles(
+    const std::array<std::string, S>& files,
+    std::string& json
+)
 {
-    constexpr char FILE_PATH[] {"data.json"};
-    constexpr char SEPARATOR[] {"-------------------------------------"};
+    json = "[";
 
-    std::ifstream file(FILE_PATH);
-
-    if (!file.is_open())
+    for(auto& path : files)
     {
-        std::cerr << "Cannot open the data file!";
-        return EXIT_FAILURE;
+        std::ifstream file(path);
+
+        if (!file.is_open())
+        {
+            throw std::invalid_argument("Cannot open file");
+        }
+
+        /* store the whole file content into a string, call the std::string
+           constructor: string(InputIterator first, InputIterator last);
+           std::istreambuf_iterator<char>(file) reads each character one by one
+           from the input stream until it reaches the value indicated by the
+           second parameter (std::istreambuf_iterator<char>()), which is equal
+           to an iterator using the default constructor; istreambuf_iterator is
+           in this states when reading a file and reaching the end of this file
+        */
+        std::string data(
+            (std::istreambuf_iterator<char>(file)),
+            std::istreambuf_iterator<char>()
+        );
+
+        json += data;
+
+        /* normally optional but I prefer add it here as we are in a loop */
+        file.close();
     }
 
-    /* store the whole file content into a string, call the std::string
-       constructor: string(InputIterator first, InputIterator last);
-       std::istreambuf_iterator<char>(file) reads each character one by one
-       from the input stream until it reaches the value indicated by the
-       second parameter (std::istreambuf_iterator<char>()), which is equal to
-       an iterator using the default constructor; istreambuf_iterator is in
-       this states when reading a file and reaching the end of this file */
-    std::string data(
-        (std::istreambuf_iterator<char>(file)),
-        std::istreambuf_iterator<char>()
+    json += "]";
+}
+
+int main()
+{
+    constexpr char SEPARATOR[] {"-------------------------------------"};
+
+    std::string data;
+
+    /* TODO: use the experimental method std::experimental::make_array() ? */
+    const std::array<std::string, 2> files = {
+        "template_types_deduction_references.json",
+        "template_types_deduction_constant_references.json"
+    };
+
+    loadAllFiles(
+        files,
+        data
     );
 
     nlohmann::json jsonData = nlohmann::json::parse(data);
