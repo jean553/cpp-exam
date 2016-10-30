@@ -81,9 +81,10 @@ int main()
     std::string data;
 
     /* TODO: use the experimental method std::experimental::make_array() ? */
-    const std::array<std::string, 2> files = {
+    const std::array<std::string, 3> files = {
         "template_types_deduction_references.json",
-        "template_types_deduction_constant_references.json"
+        "template_types_deduction_constant_references.json",
+        "template_types_deduction_pointers.json"
     };
 
     loadAllFiles(

@@ -1,0 +1,54 @@
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nint value = 5; \nint* ptr = &value; \nf(ptr);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "a"
+},
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nint value = 5; \nf(&value);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "a"
+},
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nconst int value = 5; \nf(&value);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "b"
+},
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nint value = 5; \nconst int* ptr = &value; \nf(ptr);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "b"
+},
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nint value = 5; \nint* const ptr = &var; \nf(ptr);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "a"
+},
+{
+    "question": "What is the deduced type of 'param' inside the function f() when f() is called ?",
+    "code": "template<typename T> \nvoid f(T* param); \nint value = 5; \nconst int* const ptr = &var; \nf(ptr);",
+    "a": "int*",
+    "b": "const int*",
+    "c": "int* const",
+    "d": "const int* const",
+    "answer": "b"
+}
