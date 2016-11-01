@@ -76,8 +76,6 @@ void loadAllFiles(
 
 int main()
 {
-    constexpr char SEPARATOR[] {"-------------------------------------"};
-
     std::string data;
 
     /* TODO: use the experimental method std::experimental::make_array() ? */
@@ -98,6 +96,9 @@ int main()
     std::string answer;
     unsigned short mark {0};
 
+    constexpr char BOLD_WHITE[] {"\033[1m\033[37m"};
+    constexpr char RESET[] {"\033[0m"};
+
     for (auto& question : jsonData)
     {
         std::string strQuestion = question["question"];
@@ -114,14 +115,14 @@ int main()
         removeDoubleQuotes(strC);
         removeDoubleQuotes(strD);
 
-        std::cout << std::endl << std::endl << strQuestion << std::endl;
-        std::cout << SEPARATOR << std::endl;
-        std::cout << strCode << std::endl;
-        std::cout << SEPARATOR << std::endl << std::endl;
-        std::cout << "A: " << strA << std::endl;
-        std::cout << "B: " << strB << std::endl;
-        std::cout << "C: " << strC << std::endl;
-        std::cout << "D: " << strD << std::endl << std::endl;
+        std::cout << std::endl << std::endl;
+        std::cout << BOLD_WHITE << strQuestion << RESET;
+        std::cout << std::endl << std::endl;
+        std::cout << strCode << std::endl << std::endl;
+        std::cout << BOLD_WHITE << "A: " << strA << RESET << std::endl;
+        std::cout << BOLD_WHITE << "B: " << strB << RESET << std::endl;
+        std::cout << BOLD_WHITE << "C: " << strC << RESET << std::endl;
+        std::cout << BOLD_WHITE << "D: " << strD << RESET << std::endl;
         std::cout << "Your answer: ";
         std::cin >> answer;
 
