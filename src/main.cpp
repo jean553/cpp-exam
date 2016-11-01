@@ -95,9 +95,11 @@ int main()
     nlohmann::json jsonData = nlohmann::json::parse(data);
 
     std::string answer;
-    unsigned short mark {0};
+    unsigned short mark {0}, total {0};
 
     constexpr char BOLD_WHITE[] {"\033[1m\033[37m"};
+    constexpr char GREEN[] {"\033[32m"};
+    constexpr char RED[] {"\033[31m"};
     constexpr char RESET[] {"\033[0m"};
 
     for (auto& question : jsonData)
@@ -127,13 +129,23 @@ int main()
         std::cout << "Your answer: ";
         std::cin >> answer;
 
+        std::cout << std::endl << std::endl;
+
         if (answer == question["answer"])
         {
+            std::cout << GREEN << "Correct !" << RESET;
+
             mark++;
         }
+        else
+        {
+            std::cout << RED << "Wrong !" << RESET;
+        }
+
+        total++;
     }
 
-    std::cout << "Mark: " << mark;
+    std::cout << std::endl << std::endl << "Mark: " << mark << " / " << total;
 
     return EXIT_SUCCESS;
 }
