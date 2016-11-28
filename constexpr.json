@@ -1,0 +1,90 @@
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue()\n{\n     return 5 + 6;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nunsigned short value {10}; \n\nconstexpr unsigned short& getValue()\n{\n     return value;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short& getValue()\n{\n     return 5 + 6;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "b"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue()\n{\n     unsigned short value {10};\n\n    return value;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue()\n{\n     const unsigned short value {10};\n\n    return value;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue()\n{\n     constexpr unsigned short value {10};\n\n    return value;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue()\n{\n     unsigned short value {10};\n\n    \n\n    std::cin >> value;\n\n    return value;\n}\n\nint main()\n{\n    std::cout << getValue();\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "b"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue(unsigned short value)\n{\n     return value;\n}\n\nint main()\n{\n    std::cout << getValue(10);\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue(constexpr unsigned short value)\n{\n     return value;\n}\n\nint main()\n{\n    std::cout << getValue(10);\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "b"
+},
+{
+    "question": "Does the following code compilation succeed ?",
+    "code": "#include <iostream>\n\nconstexpr unsigned short getValue(unsigned short value)\n{\n     return value;\n}\n\nint main()\n{\n    \n\n    unsigned short value {0};\n    std::cin >> value;\n    std::cout << getValue(value);\n\n    return EXIT_SUCCESS;\n}",
+    "a": "Yes",
+    "b": "No",
+    "c": "",
+    "d": "",
+    "answer": "a"
+}
