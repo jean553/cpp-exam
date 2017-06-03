@@ -21,4 +21,12 @@
     "c": "Heap data and mutiple header inclusions",
     "d": "Smart pointers and mutexs",
     "answer": "b"
+},
+{
+    "question": "Using RAII, the class that ensures actions are performed on a resource is called...",
+    "a": "RAII class",
+    "b": "RAII object",
+    "c": "Lock guard",
+    "d": "RAII protection",
+    "answer": "a"
 }
