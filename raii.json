@@ -37,4 +37,12 @@
     "c": "Lock guard",
     "d": "RAII protection",
     "answer": "b"
+},
+{
+    "question": "Which C++ feature is not a RAII class ?",
+    "a": "std::unique_ptr",
+    "b": "std::shared_ptr",
+    "c": "std::fstream",
+    "d": "They are all RAII classes",
+    "answer": "d"
 }
