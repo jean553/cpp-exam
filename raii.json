@@ -29,4 +29,12 @@
     "c": "Lock guard",
     "d": "RAII protection",
     "answer": "a"
+},
+{
+    "question": "Using RAII, the resource that is protected is called...",
+    "a": "RAII class",
+    "b": "RAII object",
+    "c": "Lock guard",
+    "d": "RAII protection",
+    "answer": "b"
 }
