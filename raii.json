@@ -1,0 +1,8 @@
+{
+    "question": "What means RAII ?",
+    "a": "Resource Acquisition is Initialization",
+    "b": "Resource Acquisition is Installation",
+    "c": "Reject Acquisition and Initialization",
+    "d": "Row Activation in Initialization",
+    "answer": "a"
+}
