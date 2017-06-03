@@ -13,4 +13,12 @@
     "c": "Ensure expected actions are always performed on a resource even if a function returns earlier",
     "d": "Limit memory usage",
     "answer": "c"
+},
+{
+    "question": "What kind of resources can we protect with RAII ?",
+    "a": "Smart pointers and files",
+    "b": "Files and sockets",
+    "c": "Heap data and mutiple header inclusions",
+    "d": "Smart pointers and mutexs",
+    "answer": "b"
 }
