@@ -5,4 +5,12 @@
     "c": "Reject Acquisition and Initialization",
     "d": "Row Activation in Initialization",
     "answer": "a"
+},
+{
+    "question": "What is RAII used for ?",
+    "a": "Prevent memory leaks when working with data allocated on the heap",
+    "b": "Ensure an exception is always caught",
+    "c": "Ensure expected actions are always performed on a resource even if a function returns earlier",
+    "d": "Limit memory usage",
+    "answer": "c"
 }
