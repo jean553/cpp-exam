@@ -1,0 +1,48 @@
+{
+    "question": "What means RAII ?",
+    "a": "Resource Acquisition is Initialization",
+    "b": "Resource Acquisition is Installation",
+    "c": "Reject Acquisition and Initialization",
+    "d": "Row Activation in Initialization",
+    "answer": "a"
+},
+{
+    "question": "What is RAII used for ?",
+    "a": "Prevent memory leaks when working with data allocated on the heap",
+    "b": "Ensure an exception is always caught",
+    "c": "Ensure expected actions are always performed on a resource even if a function returns earlier",
+    "d": "Limit memory usage",
+    "answer": "c"
+},
+{
+    "question": "What kind of resources can we protect with RAII ?",
+    "a": "Smart pointers and files",
+    "b": "Files and sockets",
+    "c": "Heap data and mutiple header inclusions",
+    "d": "Smart pointers and mutexs",
+    "answer": "b"
+},
+{
+    "question": "Using RAII, the class that ensures actions are performed on a resource is called...",
+    "a": "RAII class",
+    "b": "RAII object",
+    "c": "Lock guard",
+    "d": "RAII protection",
+    "answer": "a"
+},
+{
+    "question": "Using RAII, the resource that is protected is called...",
+    "a": "RAII class",
+    "b": "RAII object",
+    "c": "Lock guard",
+    "d": "RAII protection",
+    "answer": "b"
+},
+{
+    "question": "Which C++ feature is not a RAII class ?",
+    "a": "std::unique_ptr",
+    "b": "std::shared_ptr",
+    "c": "std::fstream",
+    "d": "They are all RAII classes",
+    "answer": "d"
+}
