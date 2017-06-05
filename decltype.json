@@ -1,0 +1,90 @@
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "const int x = 15;",
+    "a": "const int",
+    "b": "const int&",
+    "c": "int",
+    "d": "int&",
+    "answer": "a"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "const MyClass& x;",
+    "a": "const int",
+    "b": "const int&",
+    "c": "const MyClass",
+    "d": "const MyClass&",
+    "answer": "d"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "struct MyStructure {int x;};",
+    "a": "int",
+    "b": "int&",
+    "c": "MyStructure",
+    "d": "MyStructure&",
+    "answer": "a"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "Object x;",
+    "a": "Object&",
+    "b": "Object",
+    "c": "const Object",
+    "d": "const Object&",
+    "answer": "b"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "bool x(const MyStructure&);",
+    "a": "bool(const MyStructure&)",
+    "b": "bool(const MyStructure)",
+    "c": "bool(MyStructure)",
+    "d": "bool(MyStructure)",
+    "answer": "a"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "std::vector<int> x;",
+    "a": "const std::vector<int>",
+    "b": "std::vector<int>",
+    "c": "const std::vector<float>",
+    "d": "std::vector<T>",
+    "answer": "b"
+},
+{
+    "question": "What is the returned type of decltype(x) in the following example ?",
+    "code": "std::vector<int> array;\n??? x = array[0];",
+    "a": "int",
+    "b": "int&",
+    "c": "std::vector<int>",
+    "d": "std::vector<float>",
+    "answer": "b"
+},
+{
+    "question": "Why decltype(auto) is mandatory in the following code ?",
+    "code": "template<typename C, typename I>\ndecltype(auto) get(C& container, I index) {\nreturn container[index];\n}\n\nint main() {\nstd::vector<int> values {1, 2, 3};\nget(values, 1) = 10;\nreturn EXIT_SUCCESS;\n}",
+    "a": "Assign a value to the result of a function is forbidden",
+    "b": "The type deduction of container[index] is a int because a template deduction rule is applied, assign a value to a rvalue int is forbidden, decltype makes it int&",
+    "c": "The type deduction of container[index] is a int& because a template deduction rule is applied, assign a value to a rvalue int& is forbidden, decltype makes it int",
+    "c": "The type deduction of container[index] is a int& because a template deduction rule is applied, assign a value to a rvalue int& is forbidden, decltype makes it int&&",
+    "answer": "b"
+},
+{
+    "question": "Does the following code compile ?",
+    "code": "int value = 5;\nconst auto& reference = value;\ndecltype(auto) other = reference;\nother += 5;",
+    "a": "Yes, auto other is deduced as a const int& and decltype makes it a int, other can be modified",
+    "b": "No, auto other is deduced as a int and decltype makes it a const int, other cannot be modified",
+    "c": "No, auto other is deduced as a int and decltype makes it a const int&, other cannot be modified",
+    "d": "No, other is not declared",
+    "answer": "c"
+},
+{
+    "question": "Does the following code compile ?",
+    "code": "decltype(auto) get() {\nint value = 20;\nreturn (value);\n}\n\nint main() {\nget() = 10;\nreturn EXIT_SUCCESS;\n}",
+    "a": "No, the returned type from get() is int",
+    "b": "No, the returned type from get() is int&",
+    "c": "Yes, the returned type from get() is int",
+    "d": "Yes, the returned type from get() is int&",
+    "answer": "d"
+}
