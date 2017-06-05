@@ -87,7 +87,8 @@ int main()
         "template_types_deduction_universal_references.json",
         "constexpr.json",
         "bitset.json",
-        "raii.json"
+        "raii.json",
+        "decltype.json"
     };
 
     loadAllFiles(
