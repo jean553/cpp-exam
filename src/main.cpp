@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 /**
  * @brief remove the quotes (") from given string
@@ -104,14 +105,25 @@ int main()
     constexpr char RED[] {"\033[31m"};
     constexpr char RESET[] {"\033[0m"};
 
-    for (auto& question : jsonData)
+    srand(time(NULL));
+
+    constexpr unsigned short ASKED_QUESTIONS_AMOUNT {20};
+    for (
+        unsigned short total = 0;
+        total < ASKED_QUESTIONS_AMOUNT;
+        total += 1
+    )
     {
-        std::string strQuestion = question["question"];
-        std::string strCode = question["code"];
-        std::string strA = question["a"];
-        std::string strB = question["b"];
-        std::string strC = question["c"];
-        std::string strD = question["d"];
+        constexpr unsigned short MAXIMUM_QUESTION_INDEX {40};
+        const auto random = rand() % MAXIMUM_QUESTION_INDEX;
+        const auto& data = jsonData[random];
+
+        std::string strQuestion = data["question"];
+        std::string strCode = data["code"];
+        std::string strA = data["a"];
+        std::string strB = data["b"];
+        std::string strC = data["c"];
+        std::string strD = data["d"];
 
         removeDoubleQuotes(strQuestion);
         removeDoubleQuotes(strCode);
@@ -133,7 +145,7 @@ int main()
 
         std::cout << std::endl << std::endl;
 
-        if (answer == question["answer"])
+        if (answer == data["answer"])
         {
             std::cout << GREEN << "Correct !" << RESET;
 
@@ -143,8 +155,6 @@ int main()
         {
             std::cout << RED << "Wrong !" << RESET;
         }
-
-        total += 1;
     }
 
     std::cout << std::endl << std::endl << "Mark: " << mark << " / " << total;
