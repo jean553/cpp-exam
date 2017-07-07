@@ -2,8 +2,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <string>
-#include <streambuf>
 
 /**
  * @brief remove the quotes (") from given string
@@ -139,14 +137,14 @@ int main()
         {
             std::cout << GREEN << "Correct !" << RESET;
 
-            mark++;
+            mark += 1;
         }
         else
         {
             std::cout << RED << "Wrong !" << RESET;
         }
 
-        total++;
+        total += 1;
     }
 
     std::cout << std::endl << std::endl << "Mark: " << mark << " / " << total;
