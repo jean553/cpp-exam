@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jean553/cpp-exam.svg?branch=master)](https://travis-ci.org/jean553/cpp-exam)
+
 # cpp-exam
 
 Tested on ArchLinux with g++ 7.1.1 and cmake 3.8.2.

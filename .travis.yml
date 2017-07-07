@@ -1,0 +1,19 @@
+sudo: required
+language: cpp
+dist: trusty
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-6
+
+before_script:
+
+    - sudo apt-get update
+    - sudo apt-get install cmake -y
+script: 
+    - mkdir build && cd build/
+    - cmake -D CMAKE_CXX_COMPILER=g++-6 ..
+    - make -j 10
